@@ -2,7 +2,7 @@
 #import "prism-rn.h"
 #endif
 
-#import "generated/RNPrismRnSpec/RNPrismRnSpec.h"
+#import "generated/ios/RNPrismRnSpec/RNPrismRnSpec.h"
 
 @interface PrismRn : NSObject <NativePrismRnSpec>
 

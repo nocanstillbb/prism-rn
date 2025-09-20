@@ -172,7 +172,6 @@
     "android": {
       "javaPackageName": "com.prismrn"
     },
-    "includesGeneratedCode": true,
     "windows": {
       "namespace": "PrismRnCodegen",
       "outputDirectory": "windows/PrismRn/codegen",
