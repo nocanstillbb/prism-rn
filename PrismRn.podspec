@@ -10,7 +10,9 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => min_ios_version_supported }
+  s.ios.deployment_target = '12.0'
+  s.osx.deployment_target = '10.15'
+
   s.source       = { :git => "https://github.com/nocanstillbb/prism-rn.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{hpp,cpp,c,h}"
