@@ -166,8 +166,8 @@
     "type": "modules",
     "jsSrcsDir": "src",
     "outputDir": {
-      "ios": "ios/generated",
-      "android": "android/generated"
+      "ios": "ios/generated/",
+      "android": "android/generated/"
     },
     "android": {
       "javaPackageName": "com.prismrn"
@@ -184,7 +184,7 @@
     "version": "0.48.9"
   },
   "dependencies": {
-    "prism": "*"
+    "@nocanstillbb/prism": "*"
   },
   "react-native-windows": {
     "init-windows": {
