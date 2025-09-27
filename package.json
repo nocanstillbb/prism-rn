@@ -1,6 +1,6 @@
 {
   "name": "@nocanstillbb/prism-rn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "cpp reflection lib prism for react antive",
   "source": "./src/index.tsx",
   "main": "./src/index.tsx",
@@ -166,8 +166,8 @@
     "type": "modules",
     "jsSrcsDir": "src",
     "outputDir": {
-      "ios": "ios/generated/",
-      "android": "android/generated/"
+      "ios": "ios/generated",
+      "android": "android/generated"
     },
     "android": {
       "javaPackageName": "com.prismrn"

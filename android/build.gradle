@@ -10,7 +10,7 @@ buildscript {
 
   dependencies {
     classpath "com.android.tools.build:gradle:8.7.2"
-    // noinspection DifferentKotlinGradleVersion
+    //noinspection DifferentKotlinGradleVersion
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion')}"
   }
 }
@@ -74,11 +74,11 @@ android {
     }
   }
 
-  externalNativeBuild {
-    cmake {
-      path "CMakeLists.txt"
-    }
-  }
+  //externalNativeBuild {
+  //  cmake {
+  //    path "CMakeLists.txt"
+  //  }
+  //}
 
   buildFeatures {
     buildConfig true

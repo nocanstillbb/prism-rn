@@ -9,19 +9,20 @@ import java.util.HashMap
 
 class PrismRnPackage : BaseReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-    return if (name == PrismRnModule.NAME) {
-      PrismRnModule(reactContext)
-    } else {
-      null
-    }
+    //return if (name == PrismRnModule.NAME) {
+    //  PrismRnModule(reactContext)
+    //} else {
+    //  null
+    //}
+      return null
   }
 
   override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
-    return ReactModuleInfoProvider {
+      return ReactModuleInfoProvider {
       val moduleInfos: MutableMap<String, ReactModuleInfo> = HashMap()
-      moduleInfos[PrismRnModule.NAME] = ReactModuleInfo(
-        PrismRnModule.NAME,
-        PrismRnModule.NAME,
+      moduleInfos["PrismRnModule.NAME"] = ReactModuleInfo(
+        "PrismRnModule.NAME",
+        "PrismRnModule.NAME",
         false,  // canOverrideExistingModule
         false,  // needsEagerInit
         false,  // isCxxModule

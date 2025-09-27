@@ -75,7 +75,8 @@ Pod::Spec.new do |s|
       echo "Library target dir: $TARGET_DIR" >&2
   
       mkdir -p "$TARGET_DIR/RNPrismRnSpec"
-      rsync -av  --include='*/' --include='*.hpp'  --include='*.h' --exclude='*' "$GENERATED_DIR/RNPrismRnSpec/" "$TARGET_DIR/RNPrismRnSpec/"
+      #rsync -av  --include='*/' --include='*.hpp'  --include='*.h' --exclude='*' "$GENERATED_DIR/RNPrismRnSpec/" "$TARGET_DIR/RNPrismRnSpec/"
+      rsync -av  --include='*/' --include='*.hpp'  --include='*.h' --exclude='*' "$GENERATED_DIR/" "$TARGET_DIR/"
       echo "Codegen files synced" >&2
     SCRIPT
   }
