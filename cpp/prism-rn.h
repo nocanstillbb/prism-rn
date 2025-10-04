@@ -1,40 +1,43 @@
 #ifndef PRISMRN_H
 #define PRISMRN_H
 
-#ifdef __APPLE__
-#include "generated/ios/RNPrismRnSpecJSI.h"
-#elif defined(__ANDROID__)
-#include "RNPrismRnSpec/RNPrismRnSpecJSI.h"
-#endif
 
-#include <ReactCommon/CxxTurboModuleUtils.h>
 
+#include <iostream>
 #include <memory>
 #include <string>
+#include <ReactCommon/CxxTurboModuleUtils.h>
+
+#include "RNPrismRnSpecJSI.h"
+
+
+
 
 namespace prismrn
 {
 
-static const char *const Name = "PrismRn";
+static const char *const Name = "Prism-Rn";
 
-class JSI_EXPORT PrismrnModule : public facebook::react::NativePrismRnCxxSpec<PrismrnModule>
+class JSI_EXPORT PrismrnModule :public facebook::react::NativePrismRnCxxSpec<PrismrnModule>
 {
-
-  public:
-    PrismrnModule();
-    PrismrnModule(std::shared_ptr<facebook::react::CallInvoker> jsInvoker);
-    double multiply(facebook::jsi::Runtime &rt, double a, double b);
-    double multiply2(facebook::jsi::Runtime &rt, double a, double b);
+public:
+  PrismrnModule();
+  PrismrnModule(std::shared_ptr<facebook::react::CallInvoker> jsInvoker);
+  double multiply(facebook::jsi::Runtime &rt, double a, double b);
+  double multiply2(facebook::jsi::Runtime &rt, double a, double b);
 };
 
-struct Register_PrismrnModule
+struct RegisterPrismrnModule
 {
-    Register_PrismrnModule()
-    {
-        facebook::react::registerCxxModuleToGlobalModuleMap(Name, [](std::shared_ptr<facebook::react::CallInvoker> jsInvoker) { return std::make_shared<PrismrnModule>(jsInvoker); });
-    }
+  
+  RegisterPrismrnModule()
+  {
+    facebook::react::registerCxxModuleToGlobalModuleMap(Name, [](std::shared_ptr<facebook::react::CallInvoker> jsInvoker) { return std::make_shared<PrismrnModule>(jsInvoker); });
+  }
 };
-static inline Register_PrismrnModule _Register_PrismrnModule;
+
+static inline RegisterPrismrnModule _RegisterPrismrnModule ;
+
 
 } // namespace prismrn
 

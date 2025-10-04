@@ -6,4 +6,4 @@ export interface Spec extends TurboModule {
   multiply2(a: number, b: number): number;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('PrismRn');
+export default TurboModuleRegistry.getEnforcing<Spec>('Prism-Rn');

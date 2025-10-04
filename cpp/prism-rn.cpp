@@ -2,17 +2,16 @@
 
 namespace prismrn
 {
-
-PrismrnModule::PrismrnModule(std::shared_ptr<facebook::react::CallInvoker> jsInvoker) : facebook::react::NativePrismRnCxxSpec<PrismrnModule>(std::move(jsInvoker))
+PrismrnModule::PrismrnModule(std::shared_ptr<facebook::react::CallInvoker> jsInvoker) : facebook::react::NativePrismRnCxxSpec<PrismrnModule>(jsInvoker)
 {
 }
 double PrismrnModule::multiply2(facebook::jsi::Runtime &rt, double a, double b)
 {
-    return a * b + 10;
+    return 1 ;
 }
 double PrismrnModule::multiply(facebook::jsi::Runtime &rt, double a, double b)
 {
-    return a * b + 5;
+    return 2;
 }
 
 } // namespace prismrn

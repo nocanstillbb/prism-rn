@@ -15,21 +15,22 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/nocanstillbb/prism-rn.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}", "cpp/**/*.{hpp,cpp,c,h}"
-  s.private_header_files = "ios/**/*.h"
+s.source_files   = "cpp/**/*.{h,hpp,cpp,c}","ios/**/*.{h,hpp,m,mm}" 
+s.public_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}"
+s.private_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}"
+
 
   root = File.expand_path(__dir__)
 
   s.xcconfig = {
     'HEADER_SEARCH_PATHS' => [
-      "\"#{root}/ios/\"",
-      "\"#{root}/ios/generated\"",
+      "\"#{root}/cpp/generated/ios/\"",
     ].join(' ')
   }
 
   s.pod_target_xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
-    'CLANG_CXX_LIBRARY' => 'libc++'
+    'CLANG_CXX_LIBRARY' => 'libc++',
   }
 
 
@@ -69,7 +70,7 @@ Pod::Spec.new do |s|
         exit 0
       fi
   
-      TARGET_DIR="$LIB_DIR/ios/generated/ios"
+      TARGET_DIR="$LIB_DIR/cpp/generated/ios"
   
       echo "App codegen dir: $GENERATED_DIR" >&2
       echo "Library target dir: $TARGET_DIR" >&2

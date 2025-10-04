@@ -80,6 +80,7 @@ lib/
 
 # React Native Codegen
 ios/generated
+cpp/generated
 android/generated
 
 # React Native Nitro Modules
