@@ -45,6 +45,7 @@ s.private_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}"
   end
 
 
+  s.dependency "prism"
 
 
   # copy header to lib dir
