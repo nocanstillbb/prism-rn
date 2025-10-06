@@ -6,10 +6,12 @@
 #include <iostream>
 #include <memory>
 #include <string>
-#include <ReactCommon/CxxTurboModuleUtils.h>
 
 #include "RNPrismRnSpecJSI.h"
 
+#ifndef  _WIN32
+#include <ReactCommon/CxxTurboModuleUtils.h>
+#endif //  _WIN32
 
 
 
@@ -27,6 +29,7 @@ public:
   double multiply2(facebook::jsi::Runtime &rt, double a, double b);
 };
 
+#ifndef  _WIN32
 struct RegisterPrismrnModule
 {
   
@@ -37,6 +40,7 @@ struct RegisterPrismrnModule
 };
 
 static inline RegisterPrismrnModule _RegisterPrismrnModule ;
+#endif
 
 
 } // namespace prismrn

@@ -18,6 +18,7 @@ namespace PrismRnCodegen {
 struct PrismRnSpec : winrt::Microsoft::ReactNative::TurboModuleSpec {
   static constexpr auto methods = std::tuple{
       SyncMethod<double(double, double) noexcept>{0, L"multiply"},
+      SyncMethod<double(double, double) noexcept>{1, L"multiply2"},
   };
 
   template <class TModule>
@@ -29,6 +30,11 @@ struct PrismRnSpec : winrt::Microsoft::ReactNative::TurboModuleSpec {
           "multiply",
           "    REACT_SYNC_METHOD(multiply) double multiply(double a, double b) noexcept { /* implementation */ }\n"
           "    REACT_SYNC_METHOD(multiply) static double multiply(double a, double b) noexcept { /* implementation */ }\n");
+    REACT_SHOW_METHOD_SPEC_ERRORS(
+          1,
+          "multiply2",
+          "    REACT_SYNC_METHOD(multiply2) double multiply2(double a, double b) noexcept { /* implementation */ }\n"
+          "    REACT_SYNC_METHOD(multiply2) static double multiply2(double a, double b) noexcept { /* implementation */ }\n");
   }
 };
 
