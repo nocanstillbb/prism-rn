@@ -13,7 +13,11 @@ add_library(prismrn            SHARED
 # Specifies a path to native header files.
 include_directories(
    ../cpp
+   ../include
    build/generated/source/codegen/jni/react/renderer/components
+   "${CMAKE_CURRENT_LIST_DIR}/../../prism/include"
+   "${CMAKE_CURRENT_LIST_DIR}/../../prism-rn/include"
+   "${CMAKE_CURRENT_LIST_DIR}/../../prism-container/include"
 )
 
 target_link_libraries(
