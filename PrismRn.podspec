@@ -15,18 +15,20 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/nocanstillbb/prism-rn.git", :tag => "#{s.version}" }
 
-s.source_files   = "cpp/**/*.{h,hpp,cpp,c}","ios/**/*.{h,hpp,m,mm}" 
-s.public_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}"
-s.private_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}"
+  s.source_files   = "cpp/**/*.{h,hpp,cpp,c}","ios/**/*.{h,hpp,m,mm}","include/**/*.{h,hpp}"
+  s.public_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}" , "include/**/*.{h,hpp}"
+  s.header_mappings_dir = "include"
+  #s.private_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}", "include/**/*.{h,hpp}"
 
 
   root = File.expand_path(__dir__)
 
-  s.xcconfig = {
-    'HEADER_SEARCH_PATHS' => [
-      "\"#{root}/cpp/generated/ios/\"",
-    ].join(' ')
-  }
+  #s.xcconfig = {
+  #  'HEADER_SEARCH_PATHS' => [
+  #    "\"#{root}/cpp/generated/ios/\"",
+  #    "\"#{root}/include/\"",
+  #  ].join(' ')
+  #}
 
   s.pod_target_xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
@@ -46,6 +48,7 @@ s.private_header_files = "ios/**/*.{h,hpp}", "cpp/**/*.{h,hpp}"
 
 
   s.dependency "prism"
+  s.dependency "prism_container"
 
 
   # copy header to lib dir
